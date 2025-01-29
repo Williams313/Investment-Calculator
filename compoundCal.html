@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" href="compoundCal.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>WELCOME TO TECH LODGE</h1>
+        <h2>Compound Interest Calculator</h2>
+        <p class="required-field">* DENOTES A REQUIRED FIELD *</p>
+        
+        <div class="step-section">
+            <h3>Step 1: Initial Investment</h3>
+            <div class="input-group">
+                <label for="initialInvestment">Initial Investment </label>
+                <input type="number" id="initialInvestment" required min="0" step="0.01">
+                <small>Amount of money that you have available to invest initially.</small>
+            </div>
+        </div>
+    
+        <div class="step-section">
+            <h3>Step 2: Contribute</h3>
+            <div class="input-group">
+                <label for="monthlyContribution">Monthly Contribution</label>
+                <input type="number" id="monthlyContribution" step="0.01">
+                <small>Amount that you plan to add to the principal every month, or a negative number for the amount that you plan to withdraw every month.</small>
+            </div>
+             
+            <class="step-section">
+            <h3>Step 3: Estimated Period</h3>
+            <div class="input-group">
+                <label for="years">Length of Time in Years *</label>
+                <input type="number" id="years" required min="0">
+                <small>Length of time, in years, that you plan to save.</small>
+            </div>
+        </div>
+    
+         <div class="step-section">
+            <h3>Step 4: Estimated Interest Rate </h3>
+            <div class="input-group">
+                <label for="interestRate">Estimated Interest Rate *</label>
+                <input type="number" id="interestRate" required min="0" step="0.01">
+                <small>Your estimated annual interest rate.</small>
+            </div>
+            
+              </div>  
+            <div class="step-section">
+                <h3>Step 5: Interest Rate </h3>
+            <div class="input-group">
+                <label for="varianceRange">Interest Rate Variance Range *</label>
+                <input type="number" id="varianceRange" min="0" step="0.1">
+                <small>Range of interest rates (above and below the rate set above) that you desire to see results for.</small>
+            </div>
+        </div>
+    
+        <div class="step-section">
+            <h3>Step 6:  Accumulated Compound </h3>
+            <div class="input-group">
+                <label for="compoundFrequency">Compound Frequency</label>
+                <select id="compoundFrequency">
+                    <option value="365">Daily</option>
+                    <option value="52">Weekly</option>
+                    <option value="12">Monthly</option>
+                    <option value="4">Quarterly</option>
+                    <option value="1">Annually</option>
+                </select>
+                <small>Times per year that interest will be compounded.</small>
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <button class="calculate-btn" onclick="calculateCompoundInterest()">CALCULATE</button>
+            <button class="reset-btn" onclick="resetForm()">RESET</button>
+        </div>
+        
+        <div id="result" class="result-container"></div>
+    </div>
+    <script src="compoundCal.js"></script>
+</body>
+</html>
